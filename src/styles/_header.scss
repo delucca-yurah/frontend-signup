@@ -1,0 +1,82 @@
+#Header {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  text-align: center;
+
+  & .logo {
+    width: 400px;
+    position: relative;
+    z-index: 9;
+    margin: 0 auto;
+    will-change: transform, opacity;
+    transform: translate(0, calc(50vh - 160px));
+
+    @media screen and (max-width: 800px) {
+      transform: translate(0, calc(50vh - 50px))
+    }
+
+    &.moved {
+      transform: translate(50.5vw, -25px);
+
+      &, svg, .y, .b {
+        transition: .8s transform ease-out, .8s opacity ease-out;
+        will-change: transform, opacity;
+      }
+
+      & .b {
+        opacity: 0;
+      }
+
+      & svg {
+        transform: scale(.4);
+
+        @media screen and (max-width: 800px) {
+          transform: scale(.7);
+        }
+      }
+
+      @media screen and (max-width: 800px) {
+        transform: translate(66px, 0vh);
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 250px;
+    }
+  }
+
+  & .naosoucontainer {
+    position: fixed;
+    z-index: 99;
+    top: 35px;
+    right: 95px;
+
+
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      text-align: center;
+      position: inherit;
+      margin: 0 auto;
+      top: auto;
+      right: auto;
+    }
+  }
+
+  & .naosou {
+    padding: 15px 21px;
+    border: 1px solid transparent;
+    border-radius: 36px;
+    background-color: $extra-color-4;
+    color: #fff;
+    opacity: 0;
+    animation: 6s appear ease-out forwards;
+    cursor: pointer;
+    transition: .4s all ease-out;
+
+    &:hover {
+      background-color: $extra-color-4-lighter;
+    }
+  }
+}

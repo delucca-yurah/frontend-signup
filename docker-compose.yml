@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  frontend-chat:
+    image: yurah.azurecr.io/frontend-chat:$version
+    environment:
+      - NODE_ENV=production
+      - PORT=80
+      - REACT_APP_API_STUDENTS=#your-students-api
+      - REACT_APP_API_TRILHAS=#your-popular-trilhas-api
+      - REACT_APP_API_CHAT=#your-chat-api
+      - REACT_APP_HOST_ENV=production
+      - SITEMAP_URL=#your-sitemap-url

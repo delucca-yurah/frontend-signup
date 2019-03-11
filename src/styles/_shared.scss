@@ -1,0 +1,210 @@
+.full-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  width: 900px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1050px) {
+    width: 700px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 90%;
+    min-width: 90%;
+  }
+}
+
+p, input, span, label, small, h1, h2, h3, li {
+  font-family: $font; 
+}
+
+strong {
+  font-weight: 700;
+}
+
+*:focus {
+  outline: none;
+}
+
+.home-background {
+  background-color: $primary-color;
+  background-image: linear-gradient(180deg, $primary-color, $primary-color-lighter);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 30%;
+    z-index: 8;
+    background-image: linear-gradient(to bottom, $primary-color 0%,$primary-color 10%,transparent 100%);
+
+    @media screen and (max-width: 800px) {
+      height: 40%;
+      background-image: linear-gradient(to bottom, $primary-color 0%,$primary-color 40%,transparent 100%);
+    }
+  }
+}
+
+.buttons {
+  text-align: right;
+  width: 30%;
+  display: inline-block;
+
+  @media screen and (max-width: 540px) {
+    width: 40%;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 36px;
+  text-align: center;
+  transition: all .4s ease-out;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 21px 0;
+  width: 150px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-submit {
+    background-color: $primary-color;
+    color: $secondary-color;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: $primary-color-lighter;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 100%;
+  }
+}
+
+.input-text {
+  width: 69%;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+  vertical-align: middle;
+
+  &::placeholder {
+    color: #fff;
+  }
+
+  &.invalid {
+    color: $warning;
+
+    &::placeholder {
+      color: $warning;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 59%;
+    font-size: 1.4em;
+  }
+}
+
+.input-error {
+  display: block;
+  margin-top: 7px;
+  animation: 1.5s errorEnter linear forwards;
+  float: left;
+  color: $warning;
+
+  @media screen and (max-width: 400px) {
+    color: #fff;
+    background-color: $warning;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 130px;
+    padding: 25px 0;
+    text-align: center;
+  }
+}
+
+.input-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 55px 0;
+  background-color: $secondary-color;
+  z-index: 99;
+
+  @media screen and (max-width: 400px) {
+    padding: 35px 0;
+    height: 60px;
+  }
+}
+
+.buttons-onde {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.compressed {
+  width: 49%;
+
+  & .btn-canais {
+    @media screen and (max-width: 1050px) {
+      width: 180px;
+    }
+
+    @media screen and (max-width: 785px) {
+      margin: 5px 0;
+    }
+
+    @media screen and (max-width: 525px) {
+      margin: 0 5px;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    width: 59%;
+  }
+
+  @media screen and (max-width: 785px) {
+    width: 39%;
+    margin-top: -40px;
+  }
+
+  @media screen and (max-width: 525px) {
+    margin-top: -10px;
+  }
+
+  @media screen and (max-width: 475px) {
+    width: 49%;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    position: absolute;
+    margin-left: -5vw;
+    height: 0;
+  }
+}
+
+.send-no-text {
+  display: none;
+}

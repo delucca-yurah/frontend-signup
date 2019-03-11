@@ -1,0 +1,72 @@
+{
+  "name": "yurah-frontend-signup",
+  "author": "odelucca",
+  "description": "The frontend of Yurah's signup bot, based on React and Redux",
+  "version": "1.4.1",
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/browser": "^4.3.0",
+    "@timeyurah/handle-key-press": "^1.0.0",
+    "@timeyurah/weekdays-string-builder": "^1.0.2",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "change-case": "^3.0.2",
+    "dotenv-load": "^1.1.0",
+    "google-libphonenumber": "^3.1.15",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.11",
+    "moment-timezone": "^0.5.23",
+    "next": "^7.0.2",
+    "next-compose-plugins": "^2.1.1",
+    "next-env": "^1.0.1",
+    "next-redux-wrapper": "^2.0.0",
+    "node-sass": "^4.10.0",
+    "random": "^2.0.12",
+    "react": "^16.6.3",
+    "react-device-detect": "^1.6.1",
+    "react-dom": "^16.6.3",
+    "react-facebook": "^6.0.15",
+    "react-facebook-pixel": "^0.1.1",
+    "react-ga": "2.5.3",
+    "react-phone-number-input": "^2.2.15",
+    "react-redux": "^5.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.5",
+    "react-transition-group": "^2.5.0",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "stream": "^0.0.2",
+    "string-format": "^2.0.0",
+    "uuid": "^3.3.2",
+    "validator": "^10.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon src/server.js",
+    "build": "next build src",
+    "start": "NODE_ENV=production node src/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "chai": "^4.2.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "jest": "^23.6.0"
+  },
+  "homepage": "https://github.com/odelucca/yurah-frontend-signup#readme",
+  "bugs": {
+    "url": "https://github.com/odelucca/yurah-frontend-signup/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:odelucca/yurah-frontend-signup.git"
+  }
+}

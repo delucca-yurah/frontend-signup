@@ -1,0 +1,42 @@
+#InputConfirmContact {
+  text-align: center;
+
+  & .btn {
+    margin: 0 15px;
+    color: #fff;
+  }
+
+  & .btn-confirm {
+    background-color: $extra-color-2;
+
+    &:hover {
+      background-color: $extra-color-2-lighter;
+    }
+
+    & span {
+      @media screen and (max-width: 525px) {
+        display: block;
+      }
+    }
+  }
+
+  & .btn-back {
+    background-color: $extra-color-4;
+
+    &:hover {
+      background-color: $extra-color-4-lighter;
+    }
+
+    & span {
+      @media screen and (max-width: 525px) {
+        display: block;
+      }
+    }
+  }
+
+  & .btn {
+    @media screen and (max-width: 525px) {
+      width: 40%;
+    }
+  }
+}

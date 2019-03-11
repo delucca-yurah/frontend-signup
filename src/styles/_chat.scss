@@ -1,0 +1,235 @@
+#Chat {
+  &.chat {
+    transition: 1s all ease-out;
+    transform-origin: bottom left;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 50vh;
+    position: absolute;
+    top: 0;
+
+    &.input-true {
+      & .messages {
+        @media screen and (max-width: 800px) {
+          transform: translateY(-120px);
+        }
+      }
+      &.InputTema .messages {
+        @media screen and (max-width: 800px) {
+          transform: translateY(-210px);
+        }
+      }
+    }
+
+    &.finished-true {
+      & .messages {
+        @media screen and (max-width: 800px) {
+          transform: translateY(-160px)
+        }
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      height: 70vh;
+      margin-top: 20vh;
+      padding-bottom: 10vh;
+    }
+  }
+
+  & .messages {
+    transition: .2s transform ease-in;
+    will-change: transform;
+
+    & .mensagem {
+      opacity: 1;
+      height: 0;
+      margin: 21px 0;
+      padding-bottom: 13px;
+      padding-right: 13px;
+      overflow: visible;
+      transition: .2s all ease-in;
+      transform: scale(0.0);
+      animation: .2s scaling ease-in forwards;
+
+      & a {
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      & .texto {
+        background-color: #fff;
+        margin-left: 21px;
+        padding: 21px;
+        border: 1px solid transparent;
+        border-radius: 21px;
+        color: $primary-color;
+        font-size: .8em;
+        line-height: 1.5em;
+        box-shadow: 0px 25px 80px $shadow;
+        display: inline-block;
+        max-width: 500px;
+      }
+
+      &.error {
+        & .speech-bubble::after {
+          border-right-color: $warning;
+          transition: .4s all ease-out;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          & .texto {
+            background-color: $warning-lighter;
+          }
+
+          & .speech-bubble::after {
+            border-right-color: $warning-lighter;
+          }
+        }
+
+        & .texto {
+          background-color: $warning;
+          color: #fff;
+          transition: .4s all ease-out;
+
+          & span {
+            font-weight: 700;
+            text-decoration: underline;
+            color: $secondary-color;
+          }
+
+          @media screen and (max-width: 800px) {
+            margin-left: 0;
+          }
+        }
+      }
+
+      &.double-signup {
+        & .speech-bubble::after {
+          border-right-color: $warning;
+          transition: .4s all ease-out;
+        }
+
+        & .texto {
+          background-color: $warning;
+          color: #fff;
+          transition: .4s all ease-out;
+
+          & span {
+            font-weight: 700;
+            text-decoration: underline;
+            color: $secondary-color;
+          }
+
+          @media screen and (max-width: 800px) {
+            margin-left: 0;
+          }
+        }
+      }
+
+      @media screen and (max-width: 800px) {
+        margin: 13px 0;
+      }
+    }
+
+    .avatar {
+      max-width: 58px;
+      height: 58px;
+      border: 1px solid transparent;
+      border-radius: 100px;
+      overflow: hidden;
+      float: left;
+
+      & img {
+        max-width: 100%;
+      }
+
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
+    }
+
+    .speech-bubble {
+      position: relative;
+      background: #ffffff;
+      border-radius: .4em;
+      left: 13px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        margin-top: 2px;
+      }
+    }
+
+    .typing {
+      width: 25px;
+    }
+
+    .from-yurah {
+      transform-origin: bottom left;
+
+      & .speech-bubble:after {
+        left: 0;
+        border-right-color: #fff;
+        border-left: 0;
+
+        @media screen and (max-width: 800px) {
+          margin-left: -21px;
+        }
+      }
+
+      & .texto {
+        @media screen and (max-width: 800px) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .from-user {
+      transform-origin: bottom right;
+
+      & .avatar {
+        float: right;
+      }
+
+      & .texto {
+        float: right;
+        margin-right: 25px;
+        background-color: $secondary-color;
+        color: #fff;
+
+        @media screen and (max-width: 800px) {
+          margin-right: -12px;
+        }
+      }
+
+      & .speech-bubble {
+        float: right;
+
+        &:after {
+          right: 90px;
+          border-left-color: $secondary-color;
+          border-right: 0;
+
+          @media screen and (max-width: 800px) {
+            right: -7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@supports (-webkit-appearance:none) {
+  #Chat.chat {
+    @media screen and (max-width: 800px) {
+      height: calc(70vh - 56px);
+    }
+  }
+}

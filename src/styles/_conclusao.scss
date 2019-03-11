@@ -1,0 +1,116 @@
+.conclusao {
+  position: fixed;
+  bottom: 10%;
+  width: 100%;
+  left: 0;
+  text-align: center;
+
+  & .btn {
+    width: 25%;
+    display: inline-block;
+    border: 2px solid transparent;
+    margin: 15px 1%;
+    padding: 15px 0;
+    max-width: 350px;
+
+    &.btn-conclusao {
+      background-color: $secondary-color;
+      color: $primary-color;
+
+      &:hover {
+        background-color: $secondary-color-lighter;
+      }
+    }
+
+    &.btn-apoia {
+      background-color: $extra-color-4;
+      color: #fff;
+
+      &:hover {
+        background-color: $extra-color-4-lighter;
+      }
+    }
+
+    @media screen and (max-width: 800x) {
+      width: 35%;
+    }
+
+    @media screen and (max-width: 590px) {
+      width: 250px;
+    }
+
+    @media screen and (max-width: 525px) {
+      max-width: 100vw;
+      width: 100vw;
+      border-radius: 0;
+      margin: 0;
+      padding: 25px 0;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    bottom: 20px;
+    right: 35px;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 525px) {
+    bottom: 0;
+    left: 0;
+  }
+
+  & .share-buttons {
+    & h3 {
+      color: #fff;
+      display: inline-block;
+      margin-right: 5px;
+      font-size: .9em;
+    }
+
+    & .social-buttons {
+      display: inline-block;
+      vertical-align: middle;
+      border-spacing: 9px;
+    }
+
+    & .btn-social {
+      border: 1px solid transparent;
+      border-radius: 99px;
+      transition: .6s all ease-out;
+      color: #fff;
+      width: 33px;
+      height: 33px;
+      cursor: pointer;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  
+    & .btn-facebook {
+      background-color: #3C5B95;
+
+      &:hover {
+        background-color: #5675af;
+      }
+    }
+
+    & .btn-twitter {
+      background-color: #56A8D9;
+
+      &:hover {
+        background-color: #6fb8e2;
+      }
+    }
+
+    & .btn-linkedin {
+      background-color: #007BB5;
+
+      &:hover {
+        background-color: #1a95ce;
+      }
+    }
+
+    @media screen and (max-width: 525px) {
+      padding: 13px 25px 8px 25px;
+    }
+  }
+}

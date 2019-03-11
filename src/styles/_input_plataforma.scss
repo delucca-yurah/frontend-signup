@@ -1,0 +1,413 @@
+#InputOnde {
+  text-align: center;
+
+  @media screen and (max-width: 525px) {
+    width: 100%;
+    margin-top: -7px;
+  }
+
+  & .inputs-onde {
+    opacity: 0;
+    width: 0;
+    transition: .4s all ease-out;
+    display: inline-block;
+
+    &.show {
+      width: 50%;
+      opacity: 1;
+
+      @media screen and (max-width: 1050px) {
+        width: 39%;
+      }
+
+      @media screen and (max-width: 785px) {
+        width: 59%;
+      }
+
+      @media screen and (max-width: 540px) {
+        margin-top: 5px;
+      }
+
+      @media screen and (max-width: 490px) {
+        width: 49%;
+      }
+
+      @media screen and (max-width: 400px) {
+        margin-top: 0;
+        width: 100%;
+      }
+
+      & .inputs input {
+        @media screen and (max-width: 800px) {
+          margin-top: -80px;
+        }
+
+        @media screen and (max-width: 525px) {
+          margin-top: -20px;
+        }
+
+        @media screen and (max-width: 400px) {
+          margin-top: 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  & .confirmacao {
+    width: 59%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 7px;
+    display: inline-block;
+
+    & small {
+      font-weight: 700;
+      font-size: .8em;
+      text-transform: uppercase;
+      color: $primary-color;
+      margin-bottom: 9px;
+      display: block;
+    }
+
+    & h2 {
+      color: $primary-color;
+      font-size: 1.4em;
+      line-height: 1.2em;
+      word-wrap: break-word;
+
+      @media screen and (max-width: 400px) {
+        word-wrap: normal;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 100%;
+      padding: 0;
+      margin: 0 5px;
+      overflow: hidden;
+      position: fixed;
+      bottom: 65px;
+      left: 0;
+    }
+  }
+
+  #InputConfirmContact {
+    & i {
+      display: none;
+    }
+
+    & .btn {
+      @media screen and (max-width: 350px) {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  & .btn-canais {
+    font-size: 0.8em;
+    color: #fff;
+    width: 200px;
+    margin: 0 35px;
+
+    @media screen and (max-width: 525px) {
+      font-size: 2em;
+      width: 75px;
+      font-weight: 300;
+    }
+
+    & span {
+      margin-left: 5px;
+
+      @media screen and (max-width: 525px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 605px) {
+      margin: 0 15px;
+    }
+  }
+
+  & .btn-whatsapp {
+    background-color: $extra-color-2;
+
+    &:hover {
+      background-color: $extra-color-2-lighter;
+      border-color: transparent;
+    }
+  }
+
+  & .btn-email {
+    background-color: $extra-color-3;
+
+    &:hover {
+      background-color: $extra-color-3-lighter;
+      border-color: transparent;
+    }
+
+    @media screen and (max-width: 525px) {
+      padding: 23px 0 19px 0;
+    }
+  }
+
+  & .compressed {
+    & .btn-whatsapp {
+      border: 2px solid $extra-color-2;
+      color: $extra-color-2;
+
+      &:hover {
+        background-color: $extra-color-2;
+        color: #fff;
+      }
+
+      &.selected {
+        background-color: $extra-color-2;
+        color: #fff;
+
+        &:hover {
+          background-color: $extra-color-2-lighter;
+          border-color: transparent;
+        }
+
+        & .fa-whatsapp {
+          @media screen and (max-width: 525px) {
+            display: none;
+          }
+
+          @media screen and (max-width: 400px) {
+            display: inline-block;
+          }
+        }
+
+        & .send-no-text {
+          @media screen and (max-width: 525px) {
+            display: block;
+            font-size: 1.2em;
+          }
+
+          @media screen and (max-width: 400px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    & .btn-email {
+      border: 2px solid $extra-color-3;
+      color: $extra-color-3;
+
+      &:hover {
+        background-color: $extra-color-3;
+        color: #fff;
+      }
+
+      &.selected {
+        background-color: $extra-color-3;
+        color: #fff;
+
+        &:hover {
+          background-color: $extra-color-3-lighter;
+          border-color: transparent;
+        }
+
+        & .send-no-text {
+          @media screen and (max-width: 525px) {
+            display: inherit;
+          }
+        }
+
+        & .fa-envelope {
+          @media screen and (max-width: 525px) {
+            display: none;
+          }
+
+          @media screen and (max-width: 400px) {
+            display: inline-block;
+          }
+        }
+
+        & .send-no-text {
+          @media screen and (max-width: 525px) {
+            display: block;
+            font-size: 1.2em;
+          }
+
+          @media screen and (max-width: 400px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    & .btn-canais {
+      margin: 0 5px;
+      background-color: transparent;
+
+      @media screen and (max-width: 525px) {
+        width: 75px;
+        font-size: 1.8em;
+        font-weight: 300;
+
+        & span {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        width: 50%;
+        margin: 0;
+        margin-top: 58px;
+        border-radius: 0;
+        float: left;
+        padding: 9px 0;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      & span {
+        @media screen and (max-width: 400px) {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: .5em;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+
+  & .btn-voltar {
+    border-color: $primary-color;
+    color: $primary-color;
+    float: left;
+    transition: .4s all ease-out;
+    width: 20%;
+    margin: 0;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+
+    & i {
+      display: none;
+
+      @media screen and (max-width: 525px) {
+        display: inherit;
+      }
+    }
+
+    & .send-no-text {
+      @media screen and (max-width: 525px) {
+        display: none;
+      }
+    }
+  }
+
+  & .send-no-text {
+    display: none;
+  }
+
+  & .btn-continuar {
+    border-color: $primary-color;
+    background-color: $primary-color;
+    float: right;
+    width: 20%;
+    margin: 0;
+    transition: .4s all ease-out;
+
+    &:hover {
+      background-color: $primary-color-lighter;
+      border-color: $primary-color-lighter;
+    }
+
+    & i {
+      display: none;
+    }
+
+    & .send-no-text {
+      display: none;
+
+      @media screen and (max-width: 525px) {
+        display: inherit;
+      }
+    }
+  }
+
+  & .buttons-onde-step-1 {
+    @media screen and (max-width: 400px) {
+      margin-top: -33px;
+    }
+
+    &.null {
+      @media screen and (max-width: 400px) {
+        margin-top: -10px;
+      }
+    }
+
+    & .btn {
+      @media screen and (max-width: 400px) {
+        margin: 5px 10px;
+      }
+    }
+    
+    &.compressed {
+      @media screen and (max-width: 400px) {
+        margin-left: 0;
+        left: 0;
+        margin-top: 50px;
+      }
+
+      & .btn {
+        @media screen and (max-width: 800px) {
+          margin: 5px;
+        }
+
+        @media screen and (max-width: 400px) {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  & .buttons-onde-step-2 {
+    @media screen and (max-width: 400px) {
+      width: 100%;
+      margin: 0;
+      margin-top: 58px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    & .btn {
+      @media screen and (max-width: 400px) {
+        width: 50%;
+        border-radius: 0;
+        margin: 0;
+        padding: 0 0 10px 0;
+      }
+
+      & .send-no-text {
+        @media screen and (max-width: 400px) {
+          display: none;
+        }
+      }
+
+      & i {
+        @media screen and (max-width: 400px) {
+          display: none;
+        }
+      }
+
+      & span {
+        @media screen and (max-width: 400px) {
+          display: inline-block;
+          font-size: .4em;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+export const GET_QUESTION_STARTED = 'CHAT::GET_QUESTION_STARTED';
+
+export const GET_QUESTION_FINISHED = 'CHAT::GET_QUESTION_FINISHED';
+
+export const GET_QUESTION_FAILED = 'CHAT::GET_QUESTION_FAILED';
+
+export const SHOW_MESSAGE = 'CHAT::SHOW_MESSAGE';
+
+export const WAITING_START = 'CHAT::WAITING_START';
+
+export const WAITING_STOP = 'CHAT::WAITING_STOP';
+
+export const PRIME = 'CHAT::PRIME';
+
+export const REFERRAL = 'CHAT::REFERRAL';
+
+export const TOGGLE_INPUT = 'CHAT::TOGGLE_INPUT';
+
+export const RESET = 'CHAT::RESET';
+
+export const ADD_ANSWER = 'CHAT::ADD_ANSWER';
+
+export const SIGNUP_STARTED = 'CHAT::SIGNUP_STARTED';
+
+export const SIGNUP_FINISHED = 'CHAT::SIGNUP_FINISHED';
+
+export const SIGNUP_FAILED = 'CHAT::SIGNUP_FAILED';
+
+export const NEW_CONVERSATION = 'CHAT::NEW_CONVERSATION';
+
+export const RETRY = 'CHAT::RETRY';

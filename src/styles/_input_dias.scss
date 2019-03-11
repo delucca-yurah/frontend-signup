@@ -1,0 +1,287 @@
+#InputQuando {
+  & .buttons {
+    width: 20%;
+
+    @media screen and (max-width: 1050px) {
+      width: 40%;
+      float: right;
+    }
+
+    @media screen and (max-width: 590px) {
+      position: absolute;
+      margin-top: -55px;
+      right: 0;
+      width: 20vw;
+    }
+    
+    @media screen and (max-width: 400px) {
+      margin-top: -35px;
+    }
+
+    & .btn-submit {
+      @media screen and (max-width: 590px) {
+        border-radius: 0;
+        height: 170px;
+        padding: 0;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 400px) {
+        height: 130px;
+        width: 100%;
+      }
+    }
+
+    & .full {
+      @media screen and (max-width: 590px) {
+        display: none;
+      }
+    }
+
+    & .btn-compressed {
+      @media screen and (max-width: 590px) {
+        display: block;
+        font-size: 2.8em;
+      }
+    }
+  }
+
+  & .btn-compressed {
+    display: none;
+  }
+
+  & .selecionando-periodos {
+    @media screen and (max-width: 1050px) {
+      width: 30%;
+      float: none;
+    }
+
+    @media screen and (max-width: 650px) {
+      width: 20%;
+    }
+
+    & .btn-submit {
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
+    }
+  }
+
+  & .box-dias {
+    width: 80%;
+    display: inline-block;
+
+    & .btn-submit {
+      margin: 0 15px;
+      background-color: transparent;
+      color: $primary-color;
+      border: 2px solid $primary-color;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+      }
+
+      &.selected {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+
+    & .label-compressed {
+      display: none;
+
+      @media screen and (max-width: 650px) {
+        display: inline-block;
+      }
+    }
+
+    & .dia {
+      margin: 0 5px;
+      padding: 21px 0;
+      width: 55px;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: .8em;
+      font-weight: 700;
+      border: 2px solid $primary-color;
+      border-radius: 100px;
+      color: $primary-color;
+      cursor: pointer;
+      transition: .5s all ease-out;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+
+        @media screen and (max-width: 800px) {
+          background-color: transparent;
+          color: $primary-color;
+        }
+      }
+
+      &.selected {
+        background-color: $primary-color;
+        color: #fff;
+      }
+
+      &.disabled {
+        opacity: .3;
+        cursor: inherit;
+
+        &:hover {
+          background-color: transparent;
+          color: $primary-color;
+        }
+      }
+
+      & .dia-compressed {
+        display: none;
+
+        @media screen and (max-width: 650px) {
+          display: block;
+        }
+      }
+
+      & .full {
+        display: block;
+
+        @media screen and (max-width: 650px) {
+          display: none;
+        }
+
+        @media screen and (max-width: 400px) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        padding: 12px;
+        width: 15px;
+      }
+    }
+
+    @media screen and (max-width: 1050px) {
+      width: 60%;
+      margin-top: -45px;
+
+      & .dia {
+        margin: 9px 5px;
+      }
+
+      &.periodo {
+        width: 70%;
+        
+        & .btn-submit {
+          @media screen and (max-width: 400px) {
+            padding: 6.5px 0;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      &.periodo {
+        width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 590px) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: 400px) {
+      margin-top: -30px;
+    }
+
+    & .tudo-hoje {
+      display: inline-block;
+      position: relative;
+      padding-left: 32px;
+      cursor: pointer;
+      font-size: 1em;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      color: $primary-color;
+      padding-top: 7px;
+      margin-left: 15px;
+
+      & .full {
+        @media screen and (max-width: 650px) {
+          display: none;
+        }
+      }
+
+      & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark:after {
+          display: block;
+        }
+      }
+
+      & .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid $primary-color;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+
+    & .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      border: 1.5px solid $primary-color;
+      border-radius: 7px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+  }
+
+  & .periodo {
+    & .btn-submit {
+      @media screen and (max-width: 1050px) {
+        margin: 0 5px;
+      }
+
+      @media screen and (max-width: 785px) {
+        width: auto;
+        padding: 21px 35px;
+      }
+
+      @media screen and (max-width: 590px) {
+        padding: 21px;
+        margin-top: 35px;
+      }
+
+      @media screen and (max-width: 420px) {
+        width: 100%;
+        margin: 4px 0;
+        padding: 11px 0;
+      }
+    }
+  }
+}
+
+#Prime .tudo-hoje {
+  display: none;
+}

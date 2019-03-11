@@ -1,0 +1,5 @@
+User-agent: *
+Disalow:
+Allow: /
+
+Sitemap: https://yurah.com.br/sitemap.xml

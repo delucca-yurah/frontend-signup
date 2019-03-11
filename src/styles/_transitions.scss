@@ -1,0 +1,117 @@
+.move-enter {
+  opacity: 0.01;
+  transform: translate(0, 150px);
+
+  &-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 500ms ease-out;
+  }
+}
+
+.move-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  &-active {
+    opacity: 0.01;
+    transform: translate(0, 150px);
+    transition: all 500ms ease-out;
+  }
+}
+
+/**/
+
+.scaleup-enter {
+  opacity: 0.01;
+  transform: scaleY(0);
+  transform-origin: bottom;
+
+  &-active {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: all 500ms ease-out;
+  }
+}
+
+.scaleup-exit {
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: bottom;
+
+  &-active {
+    opacity: 0.01;
+    transform: scaleY(0);
+    transition: all 500ms ease-out;
+  }
+}
+
+/**/
+
+.fade-enter {
+  opacity: 0.01;
+
+  &-done {
+    opacity: 1;
+    transition: all 500ms ease-out;
+  }
+}
+
+.fade-exit {
+  opacity: 1;
+
+  &-active {
+    opacity: 0.01;
+    transition: all 500ms ease-out;
+  }
+}
+
+/**/
+
+@keyframes errorEnter {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(0.0);
+  }
+  to {
+    transform: scale(1.0)
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

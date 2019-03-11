@@ -1,0 +1,127 @@
+#PopularContent {
+  &.popular-content {
+    background: $extra-color-1;
+    transition: .6s ease-out;
+
+    &.outbox {
+      position: absolute;
+      top: -90px;
+      left: 0;
+      height: 90px;
+      max-height: 90px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &.opened {
+      top: -40vh;
+      height: 40vh;
+      max-height: 40vh;
+      overflow: hidden;
+
+      @media screen and (max-width: 800px) {
+        position: absolute;
+        padding-top: 56px;
+        height: unquote("calc(100vh - 56px - 170px)");
+        max-height: unquote("calc(100vh - 56px - 170px)");
+        margin-top: unquote("calc(170px - 100vh)");
+        top: 0;
+        z-index: 12;
+      }
+
+      @media screen and (max-width: 400px) {
+        height: unquote("calc(100vh - 56px - 130px)");
+        max-height: unquote("calc(100vh - 56px - 130px)");
+        margin-top: unquote("calc(130px - 100vh)");
+      }
+
+      & li {
+        line-height: 20px;
+        margin: 0 11px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 800px) {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      & .page {
+        max-height: 32vh;
+        overflow-y: scroll;
+        margin: 5vh 5% 3vh 5%;
+
+        &::-webkit-scrollbar {
+          width: 11px;
+          box-sizing: border-box;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: #fff;
+          border: 5px solid $extra-color-1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          width: 11px;
+          background-color: #fff;
+          border: 1px solid transparent;
+          border-radius: 14px;
+        }
+
+        @media screen and (max-width: 800px) {
+          max-height: unquote("calc(92vh - 170px)")!important;
+        }
+
+        @media screen and (max-width: 400px) {
+          max-height: unquote("calc(92vh - 130px)")!important;
+        }
+      }
+    }
+  }
+
+  & .page {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 80%;
+    padding: 0 5%;
+  }
+
+  & li {
+    display: inline-block;
+    color: #fff;
+    color: $secondary-color;
+    font-size: 1.2em;
+    transition: .4s ease-out;
+    line-height: 90px;
+    margin: 0 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+  
+  & .toggle {
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+    border: none;
+    height: 25px;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    overflow: hidden;
+    cursor: pointer;
+
+    & img {
+      height: 25px;
+      transition: .8s ease-out;
+
+      &.up {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

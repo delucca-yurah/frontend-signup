@@ -1,0 +1,50 @@
+image: docker
+stages:
+  - build
+  - deploy
+
+build:
+  image: docker:git
+  stage: build
+  variables:
+    DOCKER_DRIVER: overlay2
+  services:
+    - docker:dind
+  script:
+    - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_REGISTRY_DOMAIN
+    - docker build --cache-from $DOCKER_REGISTRY_DOMAIN/frontend-chat:latest -t $DOCKER_REGISTRY_DOMAIN/frontend-chat -t $DOCKER_REGISTRY_DOMAIN/frontend-chat:$CI_PIPELINE_ID .
+    - docker push $DOCKER_REGISTRY_DOMAIN/frontend-chat:latest
+    - docker push $DOCKER_REGISTRY_DOMAIN/frontend-chat:$CI_PIPELINE_ID
+
+
+deploy:
+  image: identt/rancher-compose
+  stage: deploy
+  script:
+    - sed -i "s/\$version/$CI_PIPELINE_ID/g" docker-compose.yml
+    - |
+      rancher-compose \
+        --url $RANCHER_URL \
+        --access-key $RANCHER_ACCESS_KEY \
+        --secret-key $RANCHER_SECRET_KEY \
+        -p yurah \
+        --file docker-compose.yml \
+        up -u -p -c -d
+  only:
+    - master
+
+deploy-staging:
+  image: identt/rancher-compose
+  stage: deploy
+  script:
+    - sed -i "s/\$version/$CI_PIPELINE_ID/g" docker-compose.yml
+    - sed -i "s/production/staging/g" docker-compose.yml
+    - sed -i "s/api.yurah.com.br/staging.api.yurah.com.br/g" docker-compose.yml
+    - |
+      rancher-compose \
+        --url $RANCHER_URL \
+        --access-key $RANCHER_STAGING_ACCESS_KEY \
+        --secret-key $RANCHER_STAGING_SECRET_KEY \
+        -p yurah \
+        --file docker-compose.yml \
+        up -u -p -c -d
